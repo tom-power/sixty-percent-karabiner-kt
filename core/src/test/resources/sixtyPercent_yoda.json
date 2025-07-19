@@ -1,0 +1,56 @@
+{
+    "title": "sixtyPercentYoda",
+    "rules": [
+        {
+            "description": "~/ (right_shift + escape)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "slash"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "~ (left_option + escape)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
