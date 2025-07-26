@@ -4,7 +4,7 @@ import sh.kau.karabiner.json
 import java.io.File
 
 fun main() {
-    sixtyPercentModificationsMap().forEach { (key, modifications) ->
+    sixtyPercentModificationsMap.forEach { (key, modifications) ->
         try {
             val outputFile = File("build/$key.json")
             val karabinerJson = json().encodeToString(modifications)
