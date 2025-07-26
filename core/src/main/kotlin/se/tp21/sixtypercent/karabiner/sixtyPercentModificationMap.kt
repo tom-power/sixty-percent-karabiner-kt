@@ -6,7 +6,7 @@ import se.tp21.sixtypercent.karabiner.modifications.sixtyPercentShura
 import se.tp21.sixtypercent.karabiner.modifications.sixtyPercentYoda
 import sh.kau.karabiner.ComplexModifications
 
-fun sixtyPercentModificationsMap(): Map<String, ComplexModifications> =
+val sixtyPercentModificationsMap: Map<String, ComplexModifications> =
     mapOf(
         "sixtyPercent" to sixtyPercent(),
         "sixtyPercent_K12" to sixtyPercentK12(),
