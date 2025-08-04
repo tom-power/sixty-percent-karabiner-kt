@@ -1,59 +1,50 @@
 package se.tp21.sixtypercent.karabiner.modifications
 
-import sh.kau.karabiner.ComplexModifications
-import sh.kau.karabiner.From
-import sh.kau.karabiner.FromModifiers
-import sh.kau.karabiner.KeyCode
-import sh.kau.karabiner.Manipulator
-import sh.kau.karabiner.ModifierKeyCode
-import sh.kau.karabiner.ModifierKeyCode.LeftControl
+import sh.kau.karabiner.*
+import sh.kau.karabiner.KeyCode.*
 import sh.kau.karabiner.ModifierKeyCode.LeftShift
 import sh.kau.karabiner.ModifierKeyCode.RightShift
-import sh.kau.karabiner.To
-import sh.kau.karabiner.karabinerRule
 
 fun sixtyPercentK12() = ComplexModifications(
     title = "sixtyPercentK12",
     rules = listOf(
-        karabinerRule(
-            description = "~/ (right_shift + escape)",
-            manipulators = listOf(
-                Manipulator(
-                    from = From.with(
-                        KeyCode.Escape,
-                        FromModifiers(mandatory = listOf(ModifierKeyCode.RightShift))
-                    ),
-                    to = listOf(
-                        To(KeyCode.GraveAccentAndTilde, modifiers = listOf(ModifierKeyCode.LeftShift)),
-                        To(KeyCode.Slash)
-                    )
+        karabinerRule {
+            description = "~/ (right_shift + escape)"
+            mapping {
+                from = From(
+                    Escape,
+                    FromModifiers(mandatory = listOf(RightShift))
                 )
-            ).toTypedArray(),
-        ),
+                to = listOf(
+                    To(GraveAccentAndTilde, listOf(LeftShift)),
+                    To(Slash)
+                )
+            }
+        },
         karabinerRule {
             description = "` (right_command + escape)"
             mapping {
-                fromKey = KeyCode.Escape
+                fromKey = Escape
                 fromModifiers = FromModifiers(mandatory = listOf(ModifierKeyCode.RightCommand))
-                toKey = KeyCode.GraveAccentAndTilde
+                toKey = GraveAccentAndTilde
             }
         },
         karabinerRule {
             description = "command+` (right_command + left_command + escape)"
             mapping {
-                fromKey = KeyCode.Escape
+                fromKey = Escape
                 fromModifiers =
                     FromModifiers(mandatory = listOf(ModifierKeyCode.RightCommand, ModifierKeyCode.LeftCommand))
-                toKey = KeyCode.GraveAccentAndTilde
+                toKey = GraveAccentAndTilde
                 toModifiers = listOf(ModifierKeyCode.LeftCommand)
             }
         },
         karabinerRule {
             description = "~ (left_option + escape)"
             mapping {
-                fromKey = KeyCode.Escape
+                fromKey = Escape
                 fromModifiers = FromModifiers(mandatory = listOf(ModifierKeyCode.LeftOption))
-                toKey = KeyCode.GraveAccentAndTilde
+                toKey = GraveAccentAndTilde
                 toModifiers = listOf(ModifierKeyCode.LeftShift)
             }
         },
