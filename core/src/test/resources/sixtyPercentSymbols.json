@@ -16,7 +16,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "backslash",
+                            "key_code": "grave_accent_and_tilde",
                             "modifiers": [
                                 "left_shift"
                             ]
@@ -43,7 +43,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "backslash",
+                            "key_code": "grave_accent_and_tilde",
                             "modifiers": [
                                 "left_shift"
                             ]
