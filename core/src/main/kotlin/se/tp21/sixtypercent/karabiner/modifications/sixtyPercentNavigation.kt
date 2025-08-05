@@ -1,26 +1,105 @@
 package se.tp21.sixtypercent.karabiner.modifications
 
-import sh.kau.karabiner.*
-import sh.kau.karabiner.KeyCode.*
+import sh.kau.karabiner.ComplexModifications
+import sh.kau.karabiner.From
+import sh.kau.karabiner.FromModifiers
+import sh.kau.karabiner.KarabinerRule
+import sh.kau.karabiner.KeyCode
+import sh.kau.karabiner.KeyCode.Backslash
+import sh.kau.karabiner.KeyCode.DisplayBrightnessDecrement
+import sh.kau.karabiner.KeyCode.DisplayBrightnessIncrement
+import sh.kau.karabiner.KeyCode.EqualSign
+import sh.kau.karabiner.KeyCode.Escape
+import sh.kau.karabiner.KeyCode.F1
+import sh.kau.karabiner.KeyCode.F10
+import sh.kau.karabiner.KeyCode.F11
+import sh.kau.karabiner.KeyCode.F12
+import sh.kau.karabiner.KeyCode.F2
+import sh.kau.karabiner.KeyCode.F3
+import sh.kau.karabiner.KeyCode.F4
+import sh.kau.karabiner.KeyCode.F5
+import sh.kau.karabiner.KeyCode.F6
+import sh.kau.karabiner.KeyCode.F7
+import sh.kau.karabiner.KeyCode.F8
+import sh.kau.karabiner.KeyCode.F9
+import sh.kau.karabiner.KeyCode.GraveAccentAndTilde
+import sh.kau.karabiner.KeyCode.Hyphen
+import sh.kau.karabiner.KeyCode.MissionControl
+import sh.kau.karabiner.KeyCode.Mute
+import sh.kau.karabiner.KeyCode.Num0
+import sh.kau.karabiner.KeyCode.Num1
+import sh.kau.karabiner.KeyCode.Num2
+import sh.kau.karabiner.KeyCode.Num3
+import sh.kau.karabiner.KeyCode.Num4
+import sh.kau.karabiner.KeyCode.Num5
+import sh.kau.karabiner.KeyCode.Num6
+import sh.kau.karabiner.KeyCode.Num7
+import sh.kau.karabiner.KeyCode.Num8
+import sh.kau.karabiner.KeyCode.Num9
+import sh.kau.karabiner.KeyCode.Slash
+import sh.kau.karabiner.KeyCode.VolumeDecrement
+import sh.kau.karabiner.KeyCode.VolumeIncrement
+import sh.kau.karabiner.ModifierKeyCode
+import sh.kau.karabiner.ModifierKeyCode.LeftControl
+import sh.kau.karabiner.ModifierKeyCode.LeftOption
 import sh.kau.karabiner.ModifierKeyCode.LeftShift
 import sh.kau.karabiner.ModifierKeyCode.RightShift
+import sh.kau.karabiner.To
+import sh.kau.karabiner.karabinerRule
 
-fun sixtyPercentK12() = ComplexModifications(
-    title = "sixtyPercentK12",
-    rules = listOf(
-        karabinerRule {
-            description = "~/ (right_shift + escape)"
-            mapping {
-                from = From(
-                    Escape,
-                    FromModifiers(mandatory = listOf(RightShift))
-                )
-                to = listOf(
-                    To(GraveAccentAndTilde, listOf(LeftShift)),
-                    To(Slash)
-                )
-            }
-        },
+fun sixtyPercentNavigation() =
+    ComplexModifications(
+        title = "sixtyPercentNavigation",
+        rules =rules()
+    )
+
+private fun rules(): List<KarabinerRule> = listOf(
+    karabinerRule {
+        description = "Down (left_control + left_arrow)"
+        mapping {
+            fromKey = KeyCode.LeftArrow
+            fromModifiers =
+                FromModifiers(mandatory = listOf(LeftControl), optional = listOf(ModifierKeyCode.Any))
+            toKey = KeyCode.DownArrow
+        }
+    },
+    karabinerRule {
+        description = "Up (left_control + right_arrow)"
+        mapping {
+            fromKey = KeyCode.RightArrow
+            fromModifiers =
+                FromModifiers(mandatory = listOf(LeftControl), optional = listOf(ModifierKeyCode.Any))
+            toKey = KeyCode.UpArrow
+        }
+    }
+)
+
+
+private fun sixtyPercentSymbolsRules(): List<KarabinerRule> = listOf(
+    karabinerRule {
+        description = "~/ (right_shift + escape)"
+        mapping {
+            from = From(Escape, FromModifiers(mandatory = listOf(RightShift)))
+            to = listOf(
+                To(Backslash, listOf(LeftShift)),
+                To(Slash)
+            )
+        }
+    },
+    karabinerRule {
+        description = "~ (left_option + escape)"
+        mapping {
+            from = From(Escape, FromModifiers(mandatory = listOf(LeftOption)))
+            to = listOf(
+                To(Backslash, listOf(LeftShift)),
+            )
+        }
+    }
+)
+
+
+private fun sixtyPercentRightCommandFnRules(): List<KarabinerRule> =
+    listOf(
         karabinerRule {
             description = "` (right_command + escape)"
             mapping {
@@ -43,184 +122,183 @@ fun sixtyPercentK12() = ComplexModifications(
             description = "~ (left_option + escape)"
             mapping {
                 fromKey = Escape
-                fromModifiers = FromModifiers(mandatory = listOf(ModifierKeyCode.LeftOption))
+                fromModifiers = FromModifiers(mandatory = listOf(LeftOption))
                 toKey = GraveAccentAndTilde
-                toModifiers = listOf(ModifierKeyCode.LeftShift)
+                toModifiers = listOf(LeftShift)
             }
         },
         karabinerRule {
             description = "f1 (right_command + 1)"
             mapping {
-                fromKey = KeyCode.Num1
+                fromKey = Num1
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F1
+                toKey = F1
             }
         },
         karabinerRule {
             description = "f2 (right_command + 2)"
             mapping {
-                fromKey = KeyCode.Num2
+                fromKey = Num2
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F2
+                toKey = F2
             }
         },
         karabinerRule {
             description = "f3 (right_command + 3)"
             mapping {
-                fromKey = KeyCode.Num3
+                fromKey = Num3
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F3
+                toKey = F3
             }
         },
         karabinerRule {
             description = "f4 (right_command + 4)"
             mapping {
-                fromKey = KeyCode.Num4
+                fromKey = Num4
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F4
+                toKey = F4
             }
         },
         karabinerRule {
             description = "f5 (right_command + 5)"
             mapping {
-                fromKey = KeyCode.Num5
+                fromKey = Num5
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F5
+                toKey = F5
             }
         },
         karabinerRule {
             description = "f6 (right_command + 6)"
             mapping {
-                fromKey = KeyCode.Num6
+                fromKey = Num6
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F6
+                toKey = F6
             }
         },
         karabinerRule {
             description = "f7 (right_command + 7)"
             mapping {
-                fromKey = KeyCode.Num7
+                fromKey = Num7
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F7
+                toKey = F7
             }
         },
         karabinerRule {
             description = "f8 (right_command + 8)"
             mapping {
-                fromKey = KeyCode.Num8
+                fromKey = Num8
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F8
+                toKey = F8
             }
         },
         karabinerRule {
             description = "f9 (right_command + 9)"
             mapping {
-                fromKey = KeyCode.Num9
+                fromKey = Num9
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F9
+                toKey = F9
             }
         },
         karabinerRule {
             description = "f10 (right_command + 0)"
             mapping {
-                fromKey = KeyCode.Num0
+                fromKey = Num0
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F10
+                toKey = F10
             }
         },
         karabinerRule {
             description = "f11 (right_command + hyphen)"
             mapping {
-                fromKey = KeyCode.Hyphen
+                fromKey = Hyphen
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F11
+                toKey = F11
             }
         },
         karabinerRule {
             description = "f12 (right_command + equal_sign)"
             mapping {
-                fromKey = KeyCode.EqualSign
+                fromKey = EqualSign
                 fromModifiers = FromModifiers(
                     mandatory = listOf(ModifierKeyCode.RightCommand),
                     optional = listOf(ModifierKeyCode.Any)
                 )
-                toKey = KeyCode.F12
+                toKey = F12
             }
         },
         karabinerRule {
             description = "brightness decrement (f1)"
             mapping {
-                fromKey = KeyCode.F1
-                toKey = KeyCode.DisplayBrightnessDecrement
+                fromKey = F1
+                toKey = DisplayBrightnessDecrement
             }
         },
         karabinerRule {
             description = "brightness increment (f2)"
             mapping {
-                fromKey = KeyCode.F2
-                toKey = KeyCode.DisplayBrightnessIncrement
+                fromKey = F2
+                toKey = DisplayBrightnessIncrement
             }
         },
         karabinerRule {
             description = "mission control (f3)"
             mapping {
-                fromKey = KeyCode.F3
-                toKey = KeyCode.MissionControl
+                fromKey = F3
+                toKey = MissionControl
             }
         },
         karabinerRule {
             description = "mute (f10)"
             mapping {
-                fromKey = KeyCode.F10
-                toKey = KeyCode.Mute
+                fromKey = F10
+                toKey = Mute
             }
         },
         karabinerRule {
             description = "volume decrement (f11)"
             mapping {
-                fromKey = KeyCode.F11
-                toKey = KeyCode.VolumeDecrement
+                fromKey = F11
+                toKey = VolumeDecrement
             }
         },
         karabinerRule {
             description = "volume increment (f12)"
             mapping {
-                fromKey = KeyCode.F12
-                toKey = KeyCode.VolumeIncrement
+                fromKey = F12
+                toKey = VolumeIncrement
             }
         }
     )
-)
