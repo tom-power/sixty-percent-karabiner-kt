@@ -59,7 +59,7 @@ private fun rules(): List<KarabinerRule> = listOf(
         mapping {
             from = From(Escape, FromModifiers(mandatory = listOf(RightShift)))
             to = listOf(
-                To(Backslash, listOf(LeftShift)),
+                To(GraveAccentAndTilde, listOf(LeftShift)),
                 To(Slash)
             )
         }
@@ -69,7 +69,7 @@ private fun rules(): List<KarabinerRule> = listOf(
         mapping {
             from = From(Escape, FromModifiers(mandatory = listOf(LeftOption)))
             to = listOf(
-                To(Backslash, listOf(LeftShift)),
+                To(GraveAccentAndTilde, listOf(LeftShift)),
             )
         }
     }
