@@ -3,8 +3,6 @@ package se.tp21.sixtypercent.karabiner.modifications
 import sh.kau.karabiner.ComplexModifications
 import sh.kau.karabiner.FromModifiers
 import sh.kau.karabiner.KarabinerRule
-import sh.kau.karabiner.KeyCode.DisplayBrightnessDecrement
-import sh.kau.karabiner.KeyCode.DisplayBrightnessIncrement
 import sh.kau.karabiner.KeyCode.EqualSign
 import sh.kau.karabiner.KeyCode.Escape
 import sh.kau.karabiner.KeyCode.F1
@@ -21,8 +19,6 @@ import sh.kau.karabiner.KeyCode.F8
 import sh.kau.karabiner.KeyCode.F9
 import sh.kau.karabiner.KeyCode.GraveAccentAndTilde
 import sh.kau.karabiner.KeyCode.Hyphen
-import sh.kau.karabiner.KeyCode.MissionControl
-import sh.kau.karabiner.KeyCode.Mute
 import sh.kau.karabiner.KeyCode.Num0
 import sh.kau.karabiner.KeyCode.Num1
 import sh.kau.karabiner.KeyCode.Num2
@@ -33,16 +29,14 @@ import sh.kau.karabiner.KeyCode.Num6
 import sh.kau.karabiner.KeyCode.Num7
 import sh.kau.karabiner.KeyCode.Num8
 import sh.kau.karabiner.KeyCode.Num9
-import sh.kau.karabiner.KeyCode.VolumeDecrement
-import sh.kau.karabiner.KeyCode.VolumeIncrement
 import sh.kau.karabiner.ModifierKeyCode
 import sh.kau.karabiner.ModifierKeyCode.LeftOption
 import sh.kau.karabiner.ModifierKeyCode.LeftShift
 import sh.kau.karabiner.karabinerRule
 
-fun sixtyPercentFn() =
+fun sixtyPercentFunctionKeys() =
     ComplexModifications(
-        title = "sixtyPercentFn",
+        title = "sixtyPercentFunctionKeys",
         rules = rules()
     )
 
@@ -205,48 +199,6 @@ private fun rules(): List<KarabinerRule> =
                     optional = listOf(ModifierKeyCode.Any)
                 )
                 toKey = F12
-            }
-        },
-        karabinerRule {
-            description = "brightness decrement (f1)"
-            mapping {
-                fromKey = F1
-                toKey = DisplayBrightnessDecrement
-            }
-        },
-        karabinerRule {
-            description = "brightness increment (f2)"
-            mapping {
-                fromKey = F2
-                toKey = DisplayBrightnessIncrement
-            }
-        },
-        karabinerRule {
-            description = "mission control (f3)"
-            mapping {
-                fromKey = F3
-                toKey = MissionControl
-            }
-        },
-        karabinerRule {
-            description = "mute (f10)"
-            mapping {
-                fromKey = F10
-                toKey = Mute
-            }
-        },
-        karabinerRule {
-            description = "volume decrement (f11)"
-            mapping {
-                fromKey = F11
-                toKey = VolumeDecrement
-            }
-        },
-        karabinerRule {
-            description = "volume increment (f12)"
-            mapping {
-                fromKey = F12
-                toKey = VolumeIncrement
             }
         }
     )
