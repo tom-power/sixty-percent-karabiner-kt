@@ -13,7 +13,7 @@ import sh.kau.karabiner.json
 class SixtyPercentTest {
     @ParameterizedTest
     @MethodSource("sixtyPercents")
-    fun `snippets rules are correct`(key: String, modifications: ComplexModifications) {
+    fun `sixty percent rules are correct`(key: String, modifications: ComplexModifications) {
         ResourcesApproval.assertApproved(
             approved = "/${key}.json",
             actual = json().encodeToString(modifications),
