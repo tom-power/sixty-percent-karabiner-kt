@@ -1,18 +1,7 @@
 package se.tp21.sixtypercent.karabiner.modifications
 
-import sh.kau.karabiner.ComplexModifications
-import sh.kau.karabiner.FromModifiers
-import sh.kau.karabiner.KarabinerRule
-import sh.kau.karabiner.KeyCode
-import sh.kau.karabiner.KeyCode.DisplayBrightnessDecrement
-import sh.kau.karabiner.KeyCode.DisplayBrightnessIncrement
-import sh.kau.karabiner.KeyCode.EqualSign
-import sh.kau.karabiner.KeyCode.MissionControl
-import sh.kau.karabiner.KeyCode.Mute
-import sh.kau.karabiner.KeyCode.VolumeDecrement
-import sh.kau.karabiner.KeyCode.VolumeIncrement
-import sh.kau.karabiner.ModifierKeyCode
-import sh.kau.karabiner.karabinerRule
+import sh.kau.karabiner.*
+import sh.kau.karabiner.KeyCode.*
 
 fun sixtyPercentMacKeys() =
     ComplexModifications(
@@ -23,67 +12,67 @@ fun sixtyPercentMacKeys() =
 private fun rules(): List<KarabinerRule> =
     listOf(
         karabinerRule {
-            description = "brightness decrement (right_command + left_control + 1)"
+            description = "brightness decrement (left_control + f1)"
             mapping {
-                fromKey = KeyCode.Num1
+                fromKey = KeyCode.F1
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = DisplayBrightnessDecrement
             }
         },
         karabinerRule {
-            description = "brightness increment (right_command + left_control + 2)"
+            description = "brightness increment (left_control + f2)"
             mapping {
-                fromKey = KeyCode.Num2
+                fromKey = KeyCode.F2
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = DisplayBrightnessIncrement
             }
         },
         karabinerRule {
-            description = "mission control (right_command + left_control + 3)"
+            description = "mission control (left_control + f3)"
             mapping {
-                fromKey = KeyCode.Num3
+                fromKey = KeyCode.F3
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = MissionControl
             }
         },
         karabinerRule {
-            description = "mute (right_command + left_control + 0)"
+            description = "mute (left_control + f10)"
             mapping {
-                fromKey = KeyCode.Num0
+                fromKey = KeyCode.F10
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = Mute
             }
         },
         karabinerRule {
-            description = "volume decrement (right_command + left_control + minus)"
+            description = "volume decrement (left_control + f11)"
             mapping {
-                fromKey = KeyCode.Hyphen
+                fromKey = KeyCode.F11
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = VolumeDecrement
             }
         },
         karabinerRule {
-            description = "volume increment (right_command + left_control + equal)"
+            description = "volume increment (left_control + f12)"
             mapping {
-                fromKey = EqualSign
+                fromKey = KeyCode.F12
                 fromModifiers = FromModifiers(
-                    mandatory = listOf(ModifierKeyCode.RightCommand),
-                    optional = listOf(ModifierKeyCode.LeftControl)
+                    mandatory =
+                        listOf(ModifierKeyCode.LeftControl)
                 )
                 toKey = VolumeIncrement
             }
