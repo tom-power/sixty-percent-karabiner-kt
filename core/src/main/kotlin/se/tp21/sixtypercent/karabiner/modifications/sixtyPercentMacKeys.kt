@@ -7,12 +7,6 @@ import sh.kau.karabiner.KeyCode
 import sh.kau.karabiner.KeyCode.DisplayBrightnessDecrement
 import sh.kau.karabiner.KeyCode.DisplayBrightnessIncrement
 import sh.kau.karabiner.KeyCode.EqualSign
-import sh.kau.karabiner.KeyCode.F1
-import sh.kau.karabiner.KeyCode.F10
-import sh.kau.karabiner.KeyCode.F11
-import sh.kau.karabiner.KeyCode.F12
-import sh.kau.karabiner.KeyCode.F2
-import sh.kau.karabiner.KeyCode.F3
 import sh.kau.karabiner.KeyCode.MissionControl
 import sh.kau.karabiner.KeyCode.Mute
 import sh.kau.karabiner.KeyCode.VolumeDecrement
