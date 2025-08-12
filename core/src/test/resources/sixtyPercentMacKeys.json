@@ -1,0 +1,149 @@
+{
+    "title": "sixtyPercentMacKeys",
+    "rules": [
+        {
+            "description": "brightness decrement (right_command + left_control + 1)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "1",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_decrement"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "brightness increment (right_command + left_control + 2)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "2",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "display_brightness_increment"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "mission control (right_command + left_control + 3)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "3",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "mission_control"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "mute (right_command + left_control + 0)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "0",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "mute"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "volume decrement (right_command + left_control + minus)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_decrement"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "volume increment (right_command + left_control + equal)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "equal_sign",
+                        "modifiers": {
+                            "optional": [
+                                "left_control"
+                            ],
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "volume_increment"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
