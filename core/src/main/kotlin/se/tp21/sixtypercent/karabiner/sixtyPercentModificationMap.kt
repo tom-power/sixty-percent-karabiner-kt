@@ -8,8 +8,8 @@ import sh.kau.karabiner.ComplexModifications
 
 val sixtyPercentModificationsMap: Map<String, ComplexModifications> =
     mapOf(
-        "sixtyPercentMacKeys" to sixtyPercentMacKeys(),
         "sixtyPercentFunctionKeys" to sixtyPercentFunctionKeys(),
+        "sixtyPercentMacKeys" to sixtyPercentMacKeys(),
         "sixtyPercentNavigation" to sixtyPercentNavigation(),
         "sixtyPercentSymbols" to sixtyPercentSymbols(),
     )
