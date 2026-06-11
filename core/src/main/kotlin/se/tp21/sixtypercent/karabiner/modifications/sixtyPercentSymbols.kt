@@ -72,5 +72,32 @@ private fun rules(): List<KarabinerRule> = listOf(
                 To(GraveAccentAndTilde, listOf(LeftShift)),
             )
         }
-    }
+    },
+    karabinerRule {
+        description = "` (right_command + escape)"
+        mapping {
+            fromKey = Escape
+            fromModifiers = FromModifiers(mandatory = listOf(ModifierKeyCode.RightCommand))
+            toKey = GraveAccentAndTilde
+        }
+    },
+    karabinerRule {
+        description = "command+` (right_command + left_command + escape)"
+        mapping {
+            fromKey = Escape
+            fromModifiers =
+                FromModifiers(mandatory = listOf(ModifierKeyCode.RightCommand, ModifierKeyCode.LeftCommand))
+            toKey = GraveAccentAndTilde
+            toModifiers = listOf(ModifierKeyCode.LeftCommand)
+        }
+    },
+    karabinerRule {
+        description = "~ (left_option + escape)"
+        mapping {
+            fromKey = Escape
+            fromModifiers = FromModifiers(mandatory = listOf(LeftOption))
+            toKey = GraveAccentAndTilde
+            toModifiers = listOf(LeftShift)
+        }
+    },
 )
