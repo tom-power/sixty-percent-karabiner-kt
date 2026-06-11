@@ -13,7 +13,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -37,7 +37,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -61,7 +61,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -85,7 +85,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -109,7 +109,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -133,7 +133,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -157,7 +157,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -181,7 +181,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -205,7 +205,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -229,7 +229,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -253,7 +253,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },
@@ -277,7 +277,7 @@
                                 "any"
                             ],
                             "mandatory": [
-                                "left_control"
+                                "right_command"
                             ]
                         }
                     },

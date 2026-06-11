@@ -28,11 +28,8 @@ import sh.kau.karabiner.KeyCode.Num6
 import sh.kau.karabiner.KeyCode.Num7
 import sh.kau.karabiner.KeyCode.Num8
 import sh.kau.karabiner.KeyCode.Num9
-import sh.kau.karabiner.ModifierKeyCode
 import sh.kau.karabiner.ModifierKeyCode.Any
-import sh.kau.karabiner.ModifierKeyCode.LeftControl
 import sh.kau.karabiner.ModifierKeyCode.RightCommand
-import sh.kau.karabiner.ModifierKeyCode.RightControl
 import sh.kau.karabiner.karabinerRule
 
 fun sixtyPercentFunctionKeys() =
@@ -42,7 +39,7 @@ fun sixtyPercentFunctionKeys() =
     )
 
 private fun rules(): List<KarabinerRule> =
-    numToFnKeyMappings().map { it.toControlToFnRule() }
+    numToFnKeyMappings().map { it.toRightCommandToFnRule() }
 
 typealias KeyMapping = Pair<KeyCode, KeyCode>
 
@@ -62,7 +59,7 @@ private fun numToFnKeyMappings(): List<KeyMapping> =
         EqualSign to F12,
     )
 
-private fun KeyMapping.toControlToFnRule(): KarabinerRule {
+private fun KeyMapping.toRightCommandToFnRule(): KarabinerRule {
     val (from, to) = this
     return karabinerRule {
         val toName = to.name.lowercase()
@@ -71,7 +68,7 @@ private fun KeyMapping.toControlToFnRule(): KarabinerRule {
         mapping {
             fromKey = from
             fromModifiers = FromModifiers(
-                mandatory = listOf(LeftControl),
+                mandatory = listOf(RightCommand),
                 optional = listOf(Any)
             )
             toKey = to
